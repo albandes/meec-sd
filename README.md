@@ -1,6 +1,6 @@
-# Projeto IoT: Controle de Lâmpadas com MQTT + Tasmota + HTML
+# Projeto IoT: Controle de Leds com MQTT + Tasmota + HTML
 
-Este projeto demonstra como controlar lâmpadas IoT via interface web responsiva utilizando **HTML + Bootstrap + MQTT.js**, com ESP8266 rodando **Tasmota**, e um broker **Mosquitto** configurado para conexões WebSocket.
+Este projeto demonstra como controlar leds via interface web responsiva utilizando **HTML + Bootstrap + MQTT.js**, com ESP8266 rodando **Tasmota**, e um broker **Mosquitto** configurado para conexões WebSocket.
 
 ---
 

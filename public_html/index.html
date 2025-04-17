@@ -63,6 +63,7 @@
     });
   
     client.on("message", (topic, message) => {
+      console.log("📥 Mensagem recebida:", topic, message.toString());
       const match = topic.match(/iot\/lampada\/(\d)\/status/);
       if (match) {
         const id = match[1];
@@ -76,6 +77,17 @@
         const icon = document.getElementById("icon" + id);
         icon.classList.remove("text-warning", "text-secondary");
         icon.classList.add(iconColor);
+
+         // CHAMADA PARA API PHP (salva o status)
+         fetch('api/registrar_status.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: `lampada=${id}&status=${message.toString()}`
+          })
+          .then(response => response.text())
+          .then(data => console.log("🔄 Resposta da API:", data))
+          .catch(error => console.error("❌ Erro no fetch:", error));
+        
       }
     });
   
