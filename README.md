@@ -2,13 +2,13 @@
 
 Este projeto demonstra como controlar leds via interface web responsiva utilizando **HTML + Bootstrap + MQTT.js**, com ESP8266 rodando **Tasmota**, e um broker **Mosquitto** configurado para conexões WebSocket.
 
-# ⚠️ Aviso Importante: Uso Educacional
+## ⚠️ Aviso Importante: Uso Educacional
 
 Este projeto foi desenvolvido com **fins exclusivamente educacionais**. Ele tem como objetivo permitir que estudantes e entusiastas explorem os fundamentos da Internet das Coisas (IoT) de forma prática e interativa.
 
 ---
 
-## 🎯 Objetivo
+### 🎯 Objetivo
 
 O projeto demonstra:
 
@@ -19,7 +19,7 @@ O projeto demonstra:
 
 ---
 
-## 🚫 Não recomendado para uso em produção
+### 🚫 Não recomendado para uso em produção
 
 Este projeto **não inclui recursos de segurança** e **não deve ser utilizado em ambientes reais ou comerciais**.
 
@@ -32,7 +32,7 @@ Ele **não implementa**:
 
 ---
 
-## ✅ Uso recomendado
+### ✅ Uso recomendado
 
 Ambientes como:
 
