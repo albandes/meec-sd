@@ -2,3 +2,6 @@
 
 mosquitto_sub -h 54.235.114.156 -t 'iot/lampada/+/status'
 mosquitto_pub -h 54.235.114.156 -t "iot/lampada/1/status" -m "on"
+
+mosquitto_pub -h 127.0.0.1 -p 1883 -t "cmnd/tasmota_67D824/STATUS" -m "5"
+mosquitto_sub -h 127.0.0.1 -p 1883 -t "stat/tasmota_67D824/STATUS5"
