@@ -54,20 +54,25 @@
     const client = mqtt.connect("ws://54.235.114.156:9001");
   
     client.on("connect", () => {
-      console.log("Conectado ao broker MQTT");
-      client.subscribe("iot/lampada/+/status");
+      console.log("✅ Conectado ao broker MQTT");
+      // Assinar status de ambos os LEDs
+      client.subscribe("iot/sd/tasmota_67D824/stat/POWER1");
+      client.subscribe("iot/sd/tasmota_67D824/stat/POWER2");
     });
   
     client.on("error", (err) => {
-      console.error("Erro ao conectar:", err);
+      console.error("❌ Erro ao conectar:", err);
     });
   
     client.on("message", (topic, message) => {
       console.log("📥 Mensagem recebida:", topic, message.toString());
-      const match = topic.match(/iot\/lampada\/(\d)\/status/);
-      if (match) {
-        const id = match[1];
-        const statusText = message.toString() === "on" ? "Ligada" : "Desligada";
+  
+      let id = null;
+      if (topic.endsWith("POWER1")) id = 1;
+      else if (topic.endsWith("POWER2")) id = 2;
+  
+      if (id !== null) {
+        const statusText = message.toString().toUpperCase() === "ON" ? "Ligada" : "Desligada";
         const statusColor = statusText === "Ligada" ? "text-success" : "text-danger";
         const iconColor = statusText === "Ligada" ? "text-warning" : "text-secondary";
   
@@ -77,26 +82,26 @@
         const icon = document.getElementById("icon" + id);
         icon.classList.remove("text-warning", "text-secondary");
         icon.classList.add(iconColor);
-
-         // CHAMADA PARA API PHP (salva o status)
-         fetch('api/registrar_status.php', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: `lampada=${id}&status=${message.toString()}`
-          })
-          .then(response => response.text())
-          .then(data => console.log("🔄 Resposta da API:", data))
-          .catch(error => console.error("❌ Erro no fetch:", error));
-        
+  
+        // CHAMADA PARA API PHP (salva o status)
+        fetch('api/registrar_status.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: `lampada=${id}&status=${message.toString().toLowerCase()}`
+        })
+        .then(response => response.text())
+        .then(data => console.log("🔄 Resposta da API:", data))
+        .catch(error => console.error("❌ Erro no fetch:", error));
       }
     });
   
     function sendMQTT(lampId, action) {
-      const topic = `iot/lampada/${lampId}/comando`;
-      console.log(`Publicando no tópico ${topic}: ${action}`);
-      client.publish(topic, action);
+      const topic = `iot/sd/tasmota_67D824/cmnd/Power${lampId}`;
+      console.log(`📤 Publicando no tópico ${topic}: ${action}`);
+      client.publish(topic, action.toUpperCase());
     }
   </script>
+  
   
 
 </body>
