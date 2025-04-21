@@ -50,15 +50,8 @@ Utilize este projeto como base para aprendizado e desenvolvimento seguro, mas **
 
 - `public_html/index.html` – Interface web com botões de controle e status das lâmpadas
 - `public_html/api/registrar_status.php` – Script para registrar o status recebido
-
-- [docs/mqttjs_explicacao.md](docs/mqttjs_explicacao.md) – Como funciona o JavaScript com MQTT.js
-- [docs/html_css_layout.md](docs/html_css_layout.md) – Explicação do layout HTML + CSS
-- [docs/mosquitto_websocket_setup.md](docs/mosquitto_websocket_setup.md)  – Como instalar e configurar o Mosquitto com WebSocket
-- [docs/tutorial_tasmota_ESP8266.md](docs/tutorial_tasmota_ESP8266.md) – Como gravar o firmware Tasmota em placas com ESP8266
-- [docs/configurar_leds_tasmota.md](docs/configurar_leds_tasmota.md) - Como configurar os leds no Tasmota
-- [docs/tasmota_mqtt_integration_multiled.md](docs/tasmota_mqtt_integration_multiled.md) – Como configurar o Tasmota para funcionar com os tópicos esperados
-- [docs/guia_pinagem_nodemcu_esp8266.md](docs/guia_pinagem_nodemcu_esp8266.md) - Guia de pinagem da ESP 8266
-
+- `config/config.php` - Arquivo com a variável que contém o Ip do Broker
+- `config/.htaccess` - Uma pequena proteção ao config.php
 
 ## 🚀 Requisitos
 
@@ -76,7 +69,7 @@ Utilize este projeto como base para aprendizado e desenvolvimento seguro, mas **
 Consulte [`docs/mosquitto_websocket_setup.md`](docs/mosquitto_websocket_setup.md)
 
 ### 3. Configure o Tasmota
-Consulte [`docs/tasmota_mqtt_integration.md`](docs/tasmota_mqtt_integration.md)
+Consulte [`docs/tasmota_mqtt_integration.md`](docs/tasmota_mqtt_integration_multiled.md)
 
 ---
 
@@ -97,7 +90,11 @@ Consulte [`docs/tasmota_mqtt_integration.md`](docs/tasmota_mqtt_integration.md)
 
 ## 📂 Documentação complementar
 
-- [Explicação do código HTML e CSS](docs/html_css_layout.md)
-- [Como funciona o MQTT.js](docs/mqttjs_explicacao.md)
-- [Guia de configuração do Mosquitto com WebSocket](docs/mosquitto_websocket_setup.md)
-- [Guia de configuração do Tasmota e tópicos](docs/tasmota_mqtt_integration.md)
+- [Como funciona o JavaScript com MQTT.js](docs/mqttjs_explicacao.md)  
+- [Explicação do layout HTML + CSS](docs/html_css_layout.md) 
+- [Como instalar e configurar o Mosquitto com WebSocket](docs/mosquitto_websocket_setup.md)  
+- [Como gravar o firmware Tasmota em placas com ESP8266](docs/tutorial_tasmota_ESP8266.md) 
+- [Como configurar os leds no Tasmotad](docs/configurar_leds_tasmota.md)
+- [Guia de configuração do Tasmota e tópicos](docs/tasmota_mqtt_integration_multiled.md) 
+- [Guia de pinagem da ESP 8266](docs/guia_pinagem_nodemcu_esp8266.md) 
+
