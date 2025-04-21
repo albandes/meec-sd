@@ -1,0 +1,6 @@
+<Files "config.php">
+  SetEnvIf Referer "meec.helpdezk.cc" allow_script
+  Order Deny,Allow
+  Deny from all
+  Allow from env=allow_script
+</Files>
