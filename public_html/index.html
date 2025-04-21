@@ -48,10 +48,11 @@
     </div>
   </div>
 
-  
+  <!-- Carregue o arquivo de configuração primeiro -->
+  <script src="../config.js"></script>
   <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
   <script>
-    const client = mqtt.connect("ws://54.235.114.156:9001");
+    const client = mqtt.connect(MQTT_BROKER_URL);
   
     client.on("connect", () => {
       console.log("✅ Conectado ao broker MQTT");

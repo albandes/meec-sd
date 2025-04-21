@@ -1,0 +1,1 @@
+const MQTT_BROKER_URL = "ws://IP_SEU_BROKER:9001";
