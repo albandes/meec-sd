@@ -48,14 +48,17 @@ Utilize este projeto como base para aprendizado e desenvolvimento seguro, mas **
 
 ## 📁 Estrutura dos Arquivos
 
-- `index.html` – Interface web com botões de controle e status das lâmpadas
-- `api/registrar_status.php` – Script para registrar o status recebido
-- `docs/mqttjs_explicacao.md` – Como funciona o JavaScript com MQTT.js
-- `docs/html_css_layout.md` – Explicação do layout HTML + CSS
-- `docs/mosquitto_websocket_setup.md` – Como instalar e configurar o Mosquitto com WebSocket
-- `docs/tasmota_mqtt_integration.md` – Como configurar o Tasmota para funcionar com os tópicos esperados
+- `public_html/index.html` – Interface web com botões de controle e status das lâmpadas
+- `public_html/api/registrar_status.php` – Script para registrar o status recebido
 
----
+- [docs/mqttjs_explicacao.md](docs/mqttjs_explicacao.md) – Como funciona o JavaScript com MQTT.js
+- [docs/html_css_layout.md](docs/html_css_layout.md) – Explicação do layout HTML + CSS
+- [docs/mosquitto_websocket_setup.md](docs/mosquitto_websocket_setup.md)  – Como instalar e configurar o Mosquitto com WebSocket
+- [docs/tutorial_tasmota_ESP8266.md](docs/tutorial_tasmota_ESP8266.md) – Como gravar o firmware Tasmota em placas com ESP8266
+- [docs/configurar_leds_tasmota.md](docs/configurar_leds_tasmota.md) - Como configurar os leds no Tasmota
+- [docs/tasmota_mqtt_integration_multiled.md](docs/tasmota_mqtt_integration_multiled.md) – Como configurar o Tasmota para funcionar com os tópicos esperados
+- [docs/guia_pinagem_nodemcu_esp8266.md](docs/guia_pinagem_nodemcu_esp8266.md) - Guia de pinagem da ESP 8266
+
 
 ## 🚀 Requisitos
 
@@ -80,13 +83,13 @@ Consulte [`docs/tasmota_mqtt_integration.md`](docs/tasmota_mqtt_integration.md)
 ## 📚 Como funciona
 
 - A interface HTML se conecta ao broker MQTT via `mqtt.js` (WebSocket)
-- Ao clicar em "Ligar" ou "Desligar", é publicado um comando no tópico:
+- Ao clicar em "Ligar" ou "Desligar", é publicado um comando (ON ou OFF) no tópico:
   ```
-  iot/lampada/1/comando
+  iot/sd/tasmota_67D824/cmnd/Power1
   ```
 - O Tasmota responde com o status no tópico:
   ```
-  iot/lampada/1/status
+  iot/sd/tasmota_67D824/stat/POWER1
   ```
 - A página atualiza a interface (ícone + texto)
 

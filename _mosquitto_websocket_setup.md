@@ -65,13 +65,13 @@ sudo systemctl restart mosquitto
 No `index.html` da sua página:
 
 ```js
-const client = mqtt.connect("ws://54.235.114.156:9001");
+const client = mqtt.connect("ws://54.278.124.59:9001");
 ```
 
 Teste no console do navegador:
 
 ```js
-const client = mqtt.connect("ws://54.235.114.156:9001");
+const client = mqtt.connect("ws://54.278.124.59:9001");
 client.on("connect", () => console.log("✅ Conectado com sucesso"));
 client.on("error", (err) => console.error("❌ Erro:", err));
 ```
@@ -112,3 +112,8 @@ Eles precisam usar **WebSocket** (`ws://` ou `wss://`) para comunicação com br
 ---
 
 Pronto! Agora seu Mosquitto aceita conexões tanto de scripts locais quanto de páginas HTML usando `mqtt.js`.
+
+---
+
+**Mestrado em Engenharia Eletrônica e Computação – UCPel**  
+Dr. Rogério Albandes, Ph.D. in Computer Science · [Voltar para o README](../README.md)

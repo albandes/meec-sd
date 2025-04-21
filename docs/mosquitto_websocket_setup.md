@@ -79,11 +79,20 @@ allow_anonymous true
 
 ---
 
+## ✅ O que vai funcionar:
+
+| Cliente                       | Porta | Protocolo         | Funciona? |
+|------------------------------|-------|-------------------|-----------|
+| `mosquitto_pub`, `mosquitto_sub` | 1883  | MQTT TCP/IP       | ✅         |
+| Navegador com `mqtt.js`      | 9001  | WebSocket (`ws://`) | ✅         |
+
+---
+
 ## 🧠 Observação
 
 Browsers **não conseguem usar** MQTT na porta 1883 via TCP.  
 Para usar MQTT.js no navegador, você **precisa de WebSocket** (`ws://` ou `wss://`).
-
+Se o seu servidor web utiliza HTTPS, o WebSocket também deverá ser criptografado. Nesse caso, é obrigatório utilizar wss:// em vez de ws://.
 ---
 **Mestrado em Engenharia Eletrônica e Computação – UCPel**  
 Dr. Rogério Albandes, Ph.D. in Computer Science · [Voltar para o README](../README.md)

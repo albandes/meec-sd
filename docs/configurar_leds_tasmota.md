@@ -54,4 +54,7 @@ Após a reinicialização, você pode controlar os LEDs de diferentes maneiras:
 * **Nomes dos Botões:** Para tornar a interface web mais intuitiva, você pode alterar os rótulos dos botões. Vá em **"Configuration"** -> **"Configure Other"** e modifique os campos **"Button1 Label"** e **"Button2 Label"** para nomes como "LED Vermelho" e "LED Verde", por exemplo.
 * **Resistores:** A escolha correta dos resistores é crucial para proteger os LEDs. Utilize a Lei de Ohm ($V = IR$) para calcular o valor adequado, considerando a tensão de alimentação (geralmente 3.3V nos GPIOs) e as especificações de corrente e tensão dos seus LEDs.
 
-Este guia deve ajudar seus alunos a configurar e controlar os LEDs no Tasmota. Boa sorte com a aula!
+---
+
+**Mestrado em Engenharia Eletrônica e Computação – UCPel**  
+Dr. Rogério Albandes, Ph.D. in Computer Science · [Voltar para o README](../README.md)

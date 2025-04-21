@@ -1,28 +1,5 @@
 
 
-mosquitto_sub -h 54.235.114.156 -t 'iot/lampada/+/status'
-mosquitto_pub -h 54.235.114.156 -t "iot/lampada/1/status" -m "on"
-
-mosquitto_pub -h 127.0.0.1 -p 1883 -t "cmnd/tasmota_67D824/STATUS" -m "5"
-mosquitto_sub -h 127.0.0.1 -p 1883 -t "stat/tasmota_67D824/STATUS5"
-
-mosquitto_pub -h 127.0.0.1 -p 1883 -t "cmnd/tasmota_67D824/Power1" -m "on"
-mosquitto_pub -h 127.0.0.1 -p 1883 -t "cmnd/tasmota_67D824/Power1" -m "off"
-
-
-Topic = %topic% (tasmota_67D824)
-tasmota_%06X
-
-Full Topic (%prefix%/%topic%/)
-%prefix%/%topic%/
-
-mosquitto_pub -h 127.0.0.1 -p 1883 -t "cmnd/meec_67D824/Power1" -m "on"
-mosquitto_pub -h 127.0.0.1 -p 1883 -t "cmnd/tasmota_67D824/Power1" -m "off"
-
-stat/meec_67D824/POWER1 ON
-
-===========
-
 mosquitto_pub -h 127.0.0.1 -p 1883 -t "iot/sd/tasmota_67D824/cmnd/Power1" -m "on"
 mosquitto_pub -h 127.0.0.1 -p 1883 -t "iot/sd/tasmota_67D824/cmnd/Power1" -m "off"
 
