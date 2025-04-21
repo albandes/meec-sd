@@ -3,7 +3,7 @@
 ## 📦 Conexão com o broker
 
 ```js
-const client = mqtt.connect("ws://SEU_BROKER:9001");
+const client = mqtt.connect("ws://IP_SEU_BROKER:9001");
 ```
 
 > Usa WebSocket (não TCP MQTT direto)

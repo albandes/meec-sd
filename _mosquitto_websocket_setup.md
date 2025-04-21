@@ -65,13 +65,13 @@ sudo systemctl restart mosquitto
 No `index.html` da sua página:
 
 ```js
-const client = mqtt.connect("ws://54.235.114.156:9001");
+const client = mqtt.connect("ws://54.278.124.59:9001");
 ```
 
 Teste no console do navegador:
 
 ```js
-const client = mqtt.connect("ws://54.235.114.156:9001");
+const client = mqtt.connect("ws://54.278.124.59:9001");
 client.on("connect", () => console.log("✅ Conectado com sucesso"));
 client.on("error", (err) => console.error("❌ Erro:", err));
 ```

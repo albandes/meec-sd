@@ -8,10 +8,10 @@ Este guia mostra como configurar um ESP8266 com firmware Tasmota para controlar 
 
 | Ação                        | Tópico                             | Mensagem     |
 |-----------------------------|------------------------------------|--------------|
-| Enviar comando para lâmpada 1 | `iot/lampada/1/comando`           | `on` ou `off` |
-| Receber status da lâmpada 1  | `iot/lampada/1/status`            | `on` ou `off` |
-| Enviar comando para lâmpada 2 | `iot/lampada/2/comando`           | `on` ou `off` |
-| Receber status da lâmpada 2  | `iot/lampada/2/status`            | `on` ou `off` |
+| Enviar comando para lâmpada 1 | `iot/sd/tasmota_67D824/cmnd/Power1`           | `on` ou `off` |
+| Receber status da lâmpada 1  | `iot/sd/tasmota_67D824/stat/POWER1`            | `on` ou `off` |
+| Enviar comando para lâmpada 2 | `iot/sd/tasmota_67D824/cmnd/Power2`           | `on` ou `off` |
+| Receber status da lâmpada 2  | `iot/sd/tasmota_67D824/stat/POWER2`            | `on` ou `off` |
 
 ---
 
@@ -32,15 +32,15 @@ Salve e o dispositivo reiniciará.
 
 Vá em **Configuration → Configure MQTT**:
 
-- **Host**: IP do seu broker (ex: `54.235.114.156`)
+- **Host**: IP_SEU_BROKER 
 - **Port**: `1883`
-- **Client**: `lampadas01`
-- **Topic**: `lampadas01`
-- **Full Topic**: `iot/lampada/%topic%/%prefix%/`
+- **Client**: `meec-sd`
+- **Topic**: `tasmota_%06X`
+- **Full Topic**: `%prefix%/%topic%/`
 
-> O `%topic%` será substituído por `lampadas01`, gerando:
-> - Comando: `iot/lampada/lampadas01/cmnd/POWER1`
-> - Status:  `iot/lampada/lampadas01/stat/POWER1`, etc.
+> O `%topic%` será substituído por `tasmota_67D824` (dependendo do MAC address da Esp), gerando:
+> - Comando: `iot/sd/tasmota_67D824/cmnd/Power1`
+> - Status:  `iot/sd/tasmota_67D824/stat/POWER1`, etc.
 
 ---
 
@@ -49,15 +49,15 @@ Vá em **Configuration → Configure MQTT**:
 Você pode adaptar o código JS para publicar em:
 
 ```js
-client.publish("iot/lampada/lampadas01/cmnd/POWER1", "ON");
-client.publish("iot/lampada/lampadas01/cmnd/POWER2", "OFF");
+client.publish("iot/sd/tasmota_67D824/cmnd/Power1", "ON");
+client.publish("iot/sd/tasmota_67D824/cmnd/Power2", "OFF");
 ```
 
 E assinar os status:
 
 ```js
-client.subscribe("iot/lampada/lampadas01/stat/POWER1");
-client.subscribe("iot/lampada/lampadas01/stat/POWER2");
+client.subscribe("iot/sd/tasmota_67D824/stat/POWER1");
+client.subscribe("iot/sd/tasmota_67D824/stat/POWER2");
 ```
 
 ---

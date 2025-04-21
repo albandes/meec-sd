@@ -57,6 +57,7 @@ Utilize este projeto como base para aprendizado e desenvolvimento seguro, mas **
 - [docs/tutorial_tasmota_ESP8266.md](docs/tutorial_tasmota_ESP8266.md) – Como gravar o firmware Tasmota em placas com ESP8266
 - [docs/configurar_leds_tasmota.md](docs/configurar_leds_tasmota.md) - Como configurar os leds no Tasmota
 - [docs/tasmota_mqtt_integration_multiled.md](docs/tasmota_mqtt_integration_multiled.md) – Como configurar o Tasmota para funcionar com os tópicos esperados
+- [docs/guia_pinagem_nodemcu_esp8266.md](docs/guia_pinagem_nodemcu_esp8266.md) - Guia de pinagem da ESP 8266
 
 
 ## 🚀 Requisitos
