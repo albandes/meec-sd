@@ -105,3 +105,8 @@ GPIO0    --> GND (modo flash!)
 ## ✅ Concluído!
 
 Agora sua ESP8266 está com o **Tasmota** instalado e pronta para automação via **MQTT, HTTP, sensores**, etc.
+
+---
+
+**Mestrado em Engenharia Eletrônica e Computação – UCPel**  
+Dr. Rogério Albandes, Ph.D. in Computer Science · [Voltar para o README](../README.md)

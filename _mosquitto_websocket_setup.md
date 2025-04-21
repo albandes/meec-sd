@@ -112,3 +112,8 @@ Eles precisam usar **WebSocket** (`ws://` ou `wss://`) para comunicação com br
 ---
 
 Pronto! Agora seu Mosquitto aceita conexões tanto de scripts locais quanto de páginas HTML usando `mqtt.js`.
+
+---
+
+**Mestrado em Engenharia Eletrônica e Computação – UCPel**  
+Dr. Rogério Albandes, Ph.D. in Computer Science · [Voltar para o README](../README.md)

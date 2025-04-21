@@ -11,14 +11,14 @@ const client = mqtt.connect("ws://SEU_BROKER:9001");
 ## 📤 Envio de comando
 
 ```js
-client.publish("iot/lampada/1/comando", "on");
+client.publish("iot/sd/tasmota_67D824/cmnd/Power1", "on");
 ```
 
 ## 📥 Recebimento de status
 
 ```js
 client.on("message", (topic, message) => {
-  if (topic === "iot/lampada/1/status") {
+  if (topic === "iot/sd/tasmota_67D824/stat/POWER1") {
     // Atualiza o status visualmente
   }
 });

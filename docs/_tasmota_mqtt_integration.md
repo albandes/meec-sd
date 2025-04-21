@@ -7,9 +7,9 @@ Este guia mostra como configurar um dispositivo Tasmota (ESP8266) para funcionar
 ## 🧩 Tópicos utilizados na página HTML
 
 | Ação                        | Tópico                            | Mensagem     |
-|-----------------------------|-----------------------------------|--------------|
-| Enviar comando ligar/desligar | `iot/lampada/1/comando`           | `on` ou `off` |
-| Receber status da lâmpada     | `iot/lampada/1/status`            | `on` ou `off` |
+|-----------------------------|---------------------------------------|--------------|
+| Enviar comando ligar/desligar | `iot/sd/tasmota_67D824/cmnd/Power`           | `on` ou `off` |
+| Receber status da lâmpada     | `iot/sd/tasmota_67D824/stat/POWER1`            | `on` ou `off` |
 
 ---
 
@@ -19,11 +19,11 @@ Este guia mostra como configurar um dispositivo Tasmota (ESP8266) para funcionar
 2. Vá em **Configuration → Configure MQTT**
 3. Configure assim:
 
-- **Host**: IP do seu broker (ex: `54.235.114.156`)
+- **Host**: IP do seu broker 
 - **Port**: `1883`
-- **Client**: `lampada1`
-- **Topic**: `lampada1`
-- **Full Topic**: `iot/lampada/1/%prefix%/`
+- **Client**: `meec-sd`
+- **Topic**: `tasmota_%06X`
+- **Full Topic**: `%prefix%/%topic%/`
 
 ---
 
