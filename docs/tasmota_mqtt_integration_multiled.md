@@ -36,7 +36,7 @@ Vá em **Configuration → Configure MQTT**:
 - **Port**: `1883`
 - **Client**: `meec-sd`
 - **Topic**: `tasmota_%06X`
-- **Full Topic**: `%prefix%/%topic%/`
+- **Full Topic**: `iot/sd/%topic%/%prefix%/`
 
 > O `%topic%` será substituído por `tasmota_67D824` (dependendo do MAC address da Esp), gerando:
 > - Comando: `iot/sd/tasmota_67D824/cmnd/Power1`
