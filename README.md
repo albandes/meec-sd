@@ -97,4 +97,5 @@ Consulte [`docs/tasmota_mqtt_integration.md`](docs/tasmota_mqtt_integration_mult
 - [Como configurar os leds no Tasmotad](docs/configurar_leds_tasmota.md)
 - [Guia de configuração do Tasmota e tópicos](docs/tasmota_mqtt_integration_multiled.md) 
 - [Guia de pinagem da ESP 8266](docs/guia_pinagem_nodemcu_esp8266.md) 
+- [Como solicitar endereço IP via MQTT](docs/tasmota_get_ip.md)
 
